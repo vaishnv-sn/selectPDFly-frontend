@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import instance from '../constants/axios';
+import { useDispatch } from 'react-redux';
+import { setPdfFileId } from '../redux/pdfFile';
 
 function UploadPDF() {
     const [file, setFile] = useState(null);
+    const dispatch = useDispatch();
 
     const onFileChange = (e) => {
         const { files } = e.target;
@@ -22,7 +25,7 @@ function UploadPDF() {
                 },
             })
             .then(({ data }) => {
-                console.log(data);
+                dispatch(setPdfFileId(data.fileId));
             })
             .catch((err) => {
                 console.log(err);
