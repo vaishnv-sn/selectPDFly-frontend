@@ -15,5 +15,5 @@ const pdfFileIdSlice = createSlice({
     }
 });
 
-export const { setPdfFileId, resetState } = pdfFileIdSlice.actions
+export const { setPdfFileId, resetFileIdState } = pdfFileIdSlice.actions
 export default pdfFileIdSlice.reducer;
